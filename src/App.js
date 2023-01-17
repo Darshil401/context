@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState,createContext} from 'react';
+import About from './About';
+
+export const userContext = createContext();
 
 function App() {
+
+  const [name,setname] = useState('CDMI');
+  const [email,setemail] = useState('CDMI@gmail.com');
+  const [age,setage] = useState('12');
+  const [mobile,setmobile] = useState('1234567890');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <userContext.Provider value={{name,email,age,mobile}}>
+            <About/>
+        </userContext.Provider>
     </div>
   );
 }
