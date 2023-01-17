@@ -11,6 +11,7 @@ const About = () => {
             <h1>Name : {val.name}</h1>
             <h2>Email : {val.email}</h2>
             <h3>Age : {val.age}</h3>
+            <h1>Hello</h1>
             <Contact/>
         </>
     )
